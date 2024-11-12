@@ -1,0 +1,168 @@
+/* Brand colors */
+:root {
+    --dark-blue: #070410;
+    --midnight-blue: #231651;
+    --teal: #4DCCBD;
+    --yellow: #EEF36A;
+    --white: #FFFFFF;
+}
+
+/* Font setup */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+    background-color: var(--dark-blue);
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: var(--midnight-blue);
+}
+
+.logo {
+    font-family: 'Teko', sans-serif;
+    font-size: 2em;
+    color: var(--teal);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+nav a {
+    font-family: 'Teko', sans-serif;
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.search-bar {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1em;
+}
+
+/* Movie grid layout */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Auto-resize cards */
+    gap: 16px;
+    justify-content: center;
+    padding: 16px;
+}
+
+/* Movie card styling */
+.movie-card {
+    background-color: var(--midnight-blue);
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Movie poster styling */
+.poster {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #ccc; /* Placeholder background */
+}
+
+/* Description styling */
+.description p {
+    font-size: 1.2em;
+    color: var(--white);
+    margin: 0;
+}
+
+/* Button styling */
+button {
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    background-color: var(--yellow);
+    color: var(--dark-blue);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: var(--teal);
+    color: var(--white);
+}
+
+/* Special styling for the first movie card */
+.movie-card:first-child {
+    grid-column: 1 / -1; /* Span full width */
+    max-width: 900px; /* Limit width on larger screens */
+    justify-self: center;
+}
+
+/* Responsive layout adjustments */
+@media (min-width: 540px) {
+    .movie-grid {
+        gap: 24px;
+    }
+
+    .movie-card {
+        max-width: 100%; /* Allow flexibility */
+    }
+}
+
+@media (min-width: 720px) {
+    .movie-grid {
+        gap: 24px;
+    }
+
+    .movie-card {
+        max-width: 100%; /* Keep flexibility on tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .movie-grid {
+        gap: 32px;
+    }
+
+    .movie-card {
+        max-width: 100%; /* Allow movie cards to auto-fit larger spaces */
+    }
+
+    .description p {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 1.5em;
+    }
+}
+.full-width {
+    grid-column: 1 / -1; /* Span entire width */
+    justify-self: center;
+}
+
+.double-column {
+    grid-column: span 1; /* Ensure cards align in pairs */
+}
+
+
+
